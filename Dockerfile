@@ -8,6 +8,7 @@ ENV EASYRSA=/usr/share/easy-rsa
 
 ADD ./install /install
 
+
 #openvpn
 ENV OVPN_ADDR=0.0.0.0 \ 
     OVPN_PORT=1194 \    
