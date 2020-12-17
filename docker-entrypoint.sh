@@ -29,6 +29,7 @@ fi
 
 init-pki(){
     source $EASYRSA/vars.example
+    easyrsa clean-all
     easyrsa init-pki
     expect -c '
     	spawn easyrsa build-ca nopass

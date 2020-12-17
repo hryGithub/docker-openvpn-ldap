@@ -26,6 +26,6 @@ ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD install /install
 
 
-VOLUME ["/var/www/localhost/htdocs", "/etc/openvpn/"]
+VOLUME ["/etc/openvpn/"]
 
 ENTRYPOINT ["bash", "/docker-entrypoint.sh"]
