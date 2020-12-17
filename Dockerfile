@@ -2,8 +2,7 @@ FROM alpine:3.12
 
 RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories && \
     apk add --no-cache expect openvpn iptables bash easy-rsa openvpn-auth-ldap && \
-    ln -s /usr/share/easy-rsa/easyrsa /usr/local/bin && \
-    rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/* && mkdir -p /etc/openvpn/ccd 
+    ln -s /usr/share/easy-rsa/easyrsa /usr/local/bin && && mkdir -p /etc/openvpn/ccd 
 
 ENV EASYRSA=/usr/share/easy-rsa
 
