@@ -11,16 +11,17 @@ if [ ! -f /etc/openvpn/server.conf ];then
 
     cat > /etc/openvpn/auth/ldap.conf <<EOF
 <LDAP>
-	URL		${LDAP_URL}
-	BindDN		"${LDAP_BINDDN}"
-	Password	"${LDAP_BINDPW}"
+	URL		$LDAP_URL
+	BindDN		"$LDAP_BINDDN"
+	Password	"$LDAP_BINDPW"
 	Timeout		15
 	TLSEnable	no
 	FollowReferrals no
 </LDAP>
+
 <Authorization>
-	BaseDN		"${LDAP_BASE}"
-	SearchFilter	"(&(cn=%u))"　
+	BaseDN		"$LDAP_BASE"
+	SearchFilter	"uid=%u"
 	RequireGroup	false
 </Authorization>
 EOF
