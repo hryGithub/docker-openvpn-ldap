@@ -6,9 +6,6 @@ RUN sed -i "s@dl-cdn.alpinelinux.org@mirrors.aliyun.com@g" /etc/apk/repositories
 
 ENV EASYRSA=/usr/share/easy-rsa
 
-ADD ./install /install
-
-
 #openvpn
 ENV OVPN_ADDR=0.0.0.0 \ 
     OVPN_PORT=1194 \    
@@ -23,7 +20,7 @@ ENV LDAP_URL='ldap://localhost:389' \
 EXPOSE 1194/udp
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh 
-ADD install /install
+ADD ./install /install
 
 
 VOLUME ["/etc/openvpn/"]
