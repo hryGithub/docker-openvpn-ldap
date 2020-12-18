@@ -20,7 +20,6 @@ ENV LDAP_URL='ldap://localhost:389' \
     LDAP_BINDDN='cn=admin,dc=example,dc=org' \
     LDAP_BINDPW='passwd' 
 
-
 EXPOSE 1194/udp
 
 ADD docker-entrypoint.sh /docker-entrypoint.sh 

@@ -67,7 +67,6 @@ if [ ! -d /etc/openvpn/client-conf ];then
     if [ $OVPN_PROTO = udp ]; then
         sed -i "s/proto tcp-client/proto udp/g" $CLIENT_CONF
     fi
-    done
 fi
 #iptables init
 mkdir -p /dev/net
@@ -76,6 +75,4 @@ if [ ! -c /dev/net/tun ]; then
 fi
 iptables -t nat -A POSTROUTING -s 10.254.254.0/24 -o eth0 -j MASQUERADE
 
-/usr/sbin/openvpn --config /etc/openvpn/server.conf --daemon
-
-httpd -D FOREGROUND
+/usr/sbin/openvpn --config /etc/openvpn/server.conf
